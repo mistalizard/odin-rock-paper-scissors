@@ -29,7 +29,7 @@ function getComputerChoice() {
 }
 
 // Compare player choice and computer choice
-function compareChoices(player, computer) {
+function playGame(player, computer) {
   let playerChoice = player
   let computerChoice = computer
   switch (playerChoice) {
@@ -81,7 +81,10 @@ function compareChoices(player, computer) {
       break
   }
 }
-// Display winner of each round
 // Keep track of score
 // Best of 5 rounds wins
 // Setup game
+function game() {
+  let roundsPlayed = 1
+  while (playerScore != winningScore || computerScore != winningScore) {}
+}
