@@ -15,8 +15,14 @@ function getPlayerChoice() {
   return playerChoice
 }
 
-console.log(getPlayerChoice())
 // Allow computer to choose between rock, paper, or scissors
+function getComputerChoice() {
+  const choices = ['rock', 'paper', 'scissors']
+  // Generates a random index value between 0 and the length of choices which is then used to assign a value to computerChoice
+  let computerChoice = choices[Math.floor(Math.random() * choices.length)]
+  return computerChoice
+}
+console.log(getComputerChoice())
 // Display winner of each round
 // Keep track of score
 // Best of 5 rounds wins
