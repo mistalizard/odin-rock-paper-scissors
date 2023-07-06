@@ -1,4 +1,3 @@
-const numOfRounds = 5
 const winningScore = 3
 let playerScore = 0
 let computerScore = 0
@@ -81,10 +80,18 @@ function playGame(player, computer) {
       break
   }
 }
-// Keep track of score
-// Best of 5 rounds wins
+
 // Setup game
 function game() {
-  let roundsPlayed = 1
-  while (playerScore != winningScore || computerScore != winningScore) {}
+  while (playerScore != winningScore && computerScore != winningScore) {
+    playGame(getPlayerChoice(), getComputerChoice())
+    console.log(
+      `Current Score: Player: ${playerScore} | Computer: ${computerScore}`
+    )
+  }
+  playerScore > computerScore
+    ? console.log("Congratulations, you've won the match!")
+    : console.log('Game Over. The computer has won the match.')
 }
+
+game()
