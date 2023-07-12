@@ -1,0 +1,38 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  background-color: #333;
+}
+
+header {
+  text-align: center;
+  font-family: 'Monoton', cursive, sans-serif;
+  font-size: 48px;
+  color: #d7d7d7;
+  padding: 20px;
+  margin-bottom: 50px;
+}
+
+#score-text {
+  display: block;
+  text-align: center;
+  font-family: 'Monoton', cursive, sans-serif;
+  font-size: 38px;
+  color: #d7d7d7;
+}
+
+#score-container {
+  display: flex;
+  justify-content: space-evenly;
+  font-family: 'Monoton', cursive, sans-serif;
+  font-size: 38px;
+  color: #d7d7d7;
+}
+
+.score-count {
+  text-align: center;
+}
