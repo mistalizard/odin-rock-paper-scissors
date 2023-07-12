@@ -15,6 +15,10 @@ function updateScore() {
   player.textContent = playerScore
   computer.textContent = computerScore
 }
+function postGameMessage(message) {
+  const gameMessage = document.querySelector('#game-messaging')
+  gameMessage.textContent = message
+}
 
 // Allow computer to choose between rock, paper, or scissors
 function getComputerChoice() {
@@ -32,14 +36,14 @@ function playGame(player, computer) {
     case 'rock':
       switch (computerChoice) {
         case 'rock':
-          console.log('Both players chose Rock! This round is a draw!')
+          postGameMessage('Both players chose Rock! This round is a draw!')
           break
         case 'paper':
-          console.log('Paper beats Rock! The computer wins this round!')
+          postGameMessage('Paper beats Rock! The computer wins this round!')
           computerScore++
           break
         case 'scissors':
-          console.log('Rock beats scissors! The player wins this round!')
+          postGameMessage('Rock beats scissors! The player wins this round!')
           playerScore++
           break
       }
@@ -47,14 +51,14 @@ function playGame(player, computer) {
     case 'paper':
       switch (computerChoice) {
         case 'rock':
-          console.log('Paper beats Rock! The player wins this round!')
+          postGameMessage('Paper beats Rock! The player wins this round!')
           playerScore++
           break
         case 'paper':
-          console.log('Both players chose Paper! This round is a draw!')
+          postGameMessage('Both players chose Paper! This round is a draw!')
           break
         case 'scissors':
-          console.log('Scissors beats paper! The computer wins this round!')
+          postGameMessage('Scissors beats paper! The computer wins this round!')
           computerScore++
           break
       }
@@ -62,15 +66,15 @@ function playGame(player, computer) {
     case 'scissors':
       switch (computerChoice) {
         case 'rock':
-          console.log('Rock beats scissors! The computer wins this round!')
+          postGameMessage('Rock beats scissors! The computer wins this round!')
           computerScore++
           break
         case 'paper':
-          console.log('Scissors beats paper! The player wins this round!')
+          postGameMessage('Scissors beats paper! The player wins this round!')
           playerScore++
           break
         case 'scissors':
-          console.log('Both players chose scissors! This round is a draw!')
+          postGameMessage('Both players chose scissors! This round is a draw!')
           computerScore++
           break
       }
@@ -80,15 +84,13 @@ function playGame(player, computer) {
 
 // Setup game
 function game() {
-  let playerChoice
   buttonID.forEach(button => {
     button.addEventListener('click', () => {
-      playerChoice = button.id
+      let playerChoice = button.id
+
       playGame(playerChoice, getComputerChoice())
       updateScore()
-      console.log(
-        `Current Score: Player: ${playerScore} | Computer: ${computerScore}`
-      )
+
       if (playerScore === winningScore) {
         alert("Congratulations, you've won the match!\n\n Press OK to reset.")
         resetScore()
@@ -103,4 +105,5 @@ function game() {
     })
   })
 }
+
 game()
