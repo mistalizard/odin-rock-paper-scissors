@@ -4,8 +4,27 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Rock Paper Scissors</title>
+    <link rel="stylesheet" href="styles.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Monoton&display=swap"
+      rel="stylesheet"
+    />
+    <script src="./game.js" defer></script>
   </head>
   <body>
-    <script src="./game.js"></script>
+    <header>RockPaperScissors</header>
+    <span id="score-text">Score</span>
+    <div id="score-container">
+      <div>
+        <div class="score-label">Player</div>
+        <div class="score-count" id="player">0</div>
+      </div>
+      <div>
+        <div class="score-label">Computer</div>
+        <div class="score-count" id="computer">0</div>
+      </div>
+    </div>
   </body>
 </html>
