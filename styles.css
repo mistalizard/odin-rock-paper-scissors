@@ -38,6 +38,14 @@ header {
   text-align: center;
 }
 
+#game-messaging {
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  font-weight: bold;
+  color: #d7d7d7;
+  text-align: center;
+  padding: 30px;
+}
+
 .buttons {
   display: flex;
   justify-content: center;
