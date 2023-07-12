@@ -1,22 +1,19 @@
-const winningScore = 3
+const winningScore = 5
 let playerScore = 0
 let computerScore = 0
 
-// Get user input and ensure it is case insensitive
-function getPlayerChoice() {
-  let playerChoice = prompt(
-    'Please enter either rock, paper, or scissors: '
-  ).toLowerCase()
-  while (
-    playerChoice != 'rock' &&
-    playerChoice != 'paper' &&
-    playerChoice != 'scissors'
-  ) {
-    playerChoice = prompt(
-      'Invalid Selection: Please enter rock, paper, or scissors: '
-    ).toLowerCase()
-  }
-  return playerChoice
+const buttonID = document.querySelectorAll('button')
+const player = document.querySelector('#player')
+const computer = document.querySelector('#computer')
+
+function resetScore() {
+  playerScore = 0
+  computerScore = 0
+}
+
+function updateScore() {
+  player.textContent = playerScore
+  computer.textContent = computerScore
 }
 
 // Allow computer to choose between rock, paper, or scissors
@@ -83,15 +80,27 @@ function playGame(player, computer) {
 
 // Setup game
 function game() {
-  while (playerScore != winningScore && computerScore != winningScore) {
-    playGame(getPlayerChoice(), getComputerChoice())
-    console.log(
-      `Current Score: Player: ${playerScore} | Computer: ${computerScore}`
-    )
-  }
-  playerScore > computerScore
-    ? console.log("Congratulations, you've won the match!")
-    : console.log('Game Over. The computer has won the match.')
+  let playerChoice
+  buttonID.forEach(button => {
+    button.addEventListener('click', () => {
+      playerChoice = button.id
+      playGame(playerChoice, getComputerChoice())
+      updateScore()
+      console.log(
+        `Current Score: Player: ${playerScore} | Computer: ${computerScore}`
+      )
+      if (playerScore === winningScore) {
+        alert("Congratulations, you've won the match!\n\n Press OK to reset.")
+        resetScore()
+        updateScore()
+      } else if (computerScore === winningScore) {
+        alert(
+          'Game Over. The computer has won the match.\n\n Press OK to reset.'
+        )
+        resetScore()
+        updateScore()
+      }
+    })
+  })
 }
-
 game()
