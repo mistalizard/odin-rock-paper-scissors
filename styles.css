@@ -31,8 +31,35 @@ header {
   font-family: 'Monoton', cursive, sans-serif;
   font-size: 38px;
   color: #d7d7d7;
+  margin-bottom: 150px;
 }
 
 .score-count {
   text-align: center;
+}
+
+.buttons {
+  display: flex;
+  justify-content: center;
+  gap: 5rem;
+  padding-left: 365px;
+  padding-right: 365px;
+}
+
+button {
+  flex: 1;
+  transition: all 0.5s ease;
+  border: 3px solid #d7d7d7;
+  border-radius: 15px;
+  background-color: transparent;
+  padding: 25px;
+  font-family: 'Monoton', cursive, sans-serif;
+  font-size: 30px;
+  color: #d7d7d7;
+}
+
+button:hover {
+  border: 3px solid #999;
+  background-color: #d7d7d7;
+  color: #333;
 }
